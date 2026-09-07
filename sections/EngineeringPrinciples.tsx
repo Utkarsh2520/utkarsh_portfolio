@@ -6,7 +6,7 @@ import { principles } from "@/data/principles";
 import { useState } from "react";
 
 export function EngineeringPrinciples() {
-  const [active, setActive] = useState(principles[0].id);
+  const [active, setActive] = useState<(typeof principles)[number]["id"]>(principles[0].id);
   const current = principles.find((p) => p.id === active) ?? principles[0];
 
   return (
